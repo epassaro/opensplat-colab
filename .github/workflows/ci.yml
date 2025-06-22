@@ -8,6 +8,9 @@ on:
     paths:
       - .github/workflows/ci.yml
 
+  schedule:
+    - cron: '0 0 * * 3'
+
   workflow_dispatch:  # Web UI trigger
 
 jobs:
