@@ -41,12 +41,6 @@ if [[ "$os_version" != "22.04" ]]; then
 fi
 echo -e "${GREEN}   ✔ Ubuntu 22.04 detected${RESET}"
 
-python_version=$(python3 -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')
-if [[ "$python_version" != "3.11" ]]; then
-    error_exit "Python 3.11 is required. Detected: $python_version"
-fi
-echo -e "${GREEN}   ✔ Python 3.11 detected${RESET}"
-
 if ! command -v nvidia-smi &> /dev/null; then
     warning "'nvidia-smi' not found. This runtime does not have a GPU."
 else
